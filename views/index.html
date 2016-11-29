@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{%block content%}
+<div data-ng-controller="taskController" data-ng-init="userId = '{{user}}'">
+    <h1>Решение задач</h1>
+    <h2>Текст задачи: {$task.text$}</h2>
+    <div class="row">
+        <div class="col-xs-6">
+            <form data-ng-submit="sendAnswer()">
+                <div class="form-group">
+                    <label for="answer">Email address</label>
+                    <input type="text" class="form-control" id="answer" placeholder="Ваш ответ" data-ng-model="task.answer">
+                </div>
+                <button type="submit" class="btn btn-primary">ОК</button>
+            </form>
+        </div>
+        {$resultMsg$}
+
+    </div>
+</div>
+{% endblock content %}
